@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+{% block title %}
+  Home
+{% endblock %}
+{% block content %}
+  {% load static %}
+  {% csrf_token %}
+
+  <div id="joke-container">
+    <div class="text-bg-light p-3" style="border-radius: 16px;" id="joke-text"></div>
+    <br />
+    <button type="button" class="btn btn-primary mb-3" id="new-joke-button">New Joke</button>
+    <script src="{% static 'js/eventButton.js' %}"></script>
+  </div>
+{% endblock %}

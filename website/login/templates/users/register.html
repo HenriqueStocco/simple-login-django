@@ -1,0 +1,24 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+  <form action="{% url 'register_page' %}" method="POST">
+    {% csrf_token %}
+    <div class="text-bg-light p-3" style="border-radius: 16px;">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="username" placeholder="username" />
+        <label for="floatingInpu">Username</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" name="email" placeholder="email" />
+        <label for="floatingInpu">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="password" placeholder="Password" />
+        <label for="floatingPassword">Password</label>
+      </div>
+      <br />
+      <input type="submit" class="btn btn-primary mb-3" value="register" id="login" />
+      <br />
+    </div>
+  </form>
+{% endblock %}
